@@ -12,31 +12,78 @@ body{
 
 .grid{
     display: grid;
-    height: 100vh;
+    height: calc(100vh - 8em);
     padding: 4em;
     grid-template-columns: 50px 1fr 1fr 200px;
-    grid-template-rows: 312px  1fr 1fr 1fr;
-    grid-template-areas: "asset-top logo logo social" "name character-name avatar avatar" "about pxcharacter-description avatar avatar" "asset-bottom learn-more arrow other-line";
+    grid-template-rows: 230px  100px 1fr 1fr 1fr;
+    grid-column-gap: 8em;
+    grid-template-areas: "asset-top logo logo social" "name character-name avatar avatar" "about character-description avatar avatar" "asset-bottom character-text avatar avatar" "asset-bottom learn-more arrow other-line";
+}
+
+.character-image-content{
+    grid-area: avatar;
+    border: 1px solid red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.arrow{
+    grid-area: arrow;
+    border: 1px solid red;
+    background-image: url('../images/arrow.svg');
+    background-repeat: no-repeat;
+    background-position: left bottom;
+}
+
+.learn-more{
+    grid-area: learn-more;
+    border: 1px solid red;
+    display: flex;
+    align-items: flex-end;
+    text-shadow: 25px;
+    text-transform: uppercase;
+    background-image: url('../images/learn-more.svg');
+    background-repeat: no-repeat;
+    background-position: left 170px bottom 5px;
 }
 
 .asset.top{
     grid-area: asset-top;
-    writing-mode: vertical-rl;
     border: 1px solid red;
-    display: flex;
-    align-items: center;
-    /* margin-inline-start: 4em; */
 }
 
-.navigation-name{
-    grid-area: name;
+.asset{
+    writing-mode: vertical-rl;
+    display: flex;
+    align-items: center;
+}
+
+.asset.bottom{
+    grid-area: asset-bottom;
+    border: 1px solid green;
+    justify-content: flex-end;
+}
+
+.navigation{
     writing-mode: vertical-rl;
     transform: rotate(180deg);
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 
-.navigation-name a{
+.navigation.name{
+    grid-area: name;
+    border: 1px solid purple;
+}
+.navigation.about{
+    grid-area: about;
+    border: 1px solid purple;
+}
+
+
+.navigation a{
     text-decoration: none;
     color: black;
     font-size: 25px;
@@ -47,8 +94,20 @@ body{
     grid-area: social;
     border: 1px solid red;
 }
-.navigation{
-    /* transform-origin: left bottom; */
+
+.character-name-container{
+    border: 1px solid blue;
+    display: flex;
+    align-items: center;
+    /* padding-inline-start: 1em; */
+}
+
+.character-description-container{
+    grid-area: character-description;
+}
+
+/* .navigation{
+    transform-origin: left bottom;
     transform: rotate(180deg);
     writing-mode: vertical-rl;
     position: absolute;
@@ -62,7 +121,7 @@ body{
     justify-content: space-between;
     padding-inline: 4em;
     display: none;
-}
+} */
 
 .navigation .text{
     display: inline-flex;
