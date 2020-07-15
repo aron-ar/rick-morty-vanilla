@@ -3,6 +3,9 @@ body{
     background:#00a5be;
     font-family: system-ui;
     overflow-x: hidden;
+    background-image: url('../images/asset-red.svg');
+    background-position: left 200px top;
+    background-repeat: no-repeat;
 }
 
 .logo{
@@ -85,6 +88,8 @@ body{
     grid-area: name;
     /* border: 1px solid purple; */
 }
+
+
 .navigation.about{
     grid-area: about;
     /* border: 1px solid purple; */
@@ -184,8 +189,21 @@ body{
 }
 
 .character-name{
+    position: relative;
     font-size: 30px;
 }
+
+.character-name h2:after{
+    content: "";
+    width: 87px;
+    height: 6px;
+    background-color:  #f7391c;
+    display: inline-flex;
+    position: absolute;
+    left: calc(100% + 5px);
+    top:50%;
+}
+
 /* 
 @media screen and (min-width:1024px){
     .character-grid{
@@ -248,6 +266,9 @@ body{
 }
 
 @media screen and (max-width: 1024px){
+    body{
+        background-position: left 50px top;
+    }
     .grid{
         height: auto;
         padding: 2em 0;
@@ -265,6 +286,7 @@ body{
     .character-name{
         text-align: center;
     }
+    
     .character-name-container{
         justify-content: center;
         margin-top: 1em;
