@@ -8,6 +8,7 @@ export default class Character{
         this.$characterImageContainer=document.querySelector('#character-image-container')
         this.$characterNameContainer=document.querySelector('#character-name-container')
         this.$characterDescriptionContainer=document.querySelector('#character-description-container')
+        this.$characterNamePlaceholderContainer=document.querySelector('#character-name-placeholder')
         this.render()
     }
     buildImage(){
@@ -35,5 +36,6 @@ export default class Character{
         this.$characterImageContainer.innerHTML= this.buildImage()
         this.$characterNameContainer.innerHTML= this.buildName()
         this.$characterDescriptionContainer.innerHTML= this.buildDescription()
+        this.$characterNamePlaceholderContainer.innerHTML= this.name
     }
 }
